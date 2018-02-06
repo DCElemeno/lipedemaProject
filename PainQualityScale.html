@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pain Quality Assessment Scale</title>
+	<style>
+		/* overall */
+		.main { margin:35px; }
+		.left { float:left; }
+		.right { float:right; }
+		.scale, .question p, 
+		.fields, .instructions, 
+		.explanation { 
+			width:740px; 
+		}
+
+		/* The container */
+		.container {
+		    display: block;
+		    position: relative;
+		    padding-left: 45px;
+		    margin-bottom: 12px;
+		    cursor: pointer;
+		    font-size: 22px;
+		    -webkit-user-select: none;
+		    -moz-user-select: none;
+		    -ms-user-select: none;
+		    user-select: none;
+		}
+
+		/* Hide the browser's default radio button */
+		.container input {
+		    position: absolute;
+		    opacity: 0;
+		    cursor: pointer;
+		}
+
+		/* Create a custom radio button */
+		.checkmark {
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    height: 25px;
+		    width: 25px;
+		    background-color: #eee;
+		    border-radius: 50%;
+		}
+
+		/* On mouse-over, add a grey background color */
+		.container:hover input ~ .checkmark {
+		    background-color: #ccc;
+		}
+
+		/* When the radio button is checked, add a blue background */
+		.container input:checked ~ .checkmark {
+		    background-color: #29BA48;
+		}
+
+		/* Create the indicator (the dot/circle - hidden when not checked) */
+		.checkmark:after {
+		    content: "";
+		    position: absolute;
+		    display: none;
+		}
+
+		/* Show the indicator (dot/circle) when checked */
+		.container input:checked ~ .checkmark:after {
+		    display: block;
+		}
+
+		/* Style the indicator (dot/circle) */
+		.container .checkmark:after {
+		 	top: 9px;
+			left: 9px;
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background: white;
+		}
+
+		/* Style the rows */
+		.vertical-question .horizontal { width:300px!important; }
+		.vertical-question label {height:0px !important;}
+		.scale label {
+			display: inline-block;
+		    height: 20px;
+		    vertical-align: top;
+		    padding-top: 40px;
+		    padding-right:12px;
+		}
+
+		.scale input, .scale span {
+			display: inline-block;
+			vertical-align: top;
+		}
+
+		.scale a {
+			font-size:16px;
+			position:absolute;
+			top:4px;
+			left:32px;
+		}
+		.explanation {
+			margin-top:-35px;
+			height:55px;
+		}
+		.explanation .right {
+			margin-right:75px;
+		}
+
+		/* For text fields */
+		.fields .asterisk { color:#24A33F; }
+		.fields .field-row {
+			width: 100%;
+    		padding: 5px 0px 5px 0px;
+    		clear: both;
+		}
+		.fields .field-label {
+    		font-size: 16px !important;
+    		line-height: 16px !important;
+    		color: #444444;
+    		font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+        	display: block;
+		    width: 25%;
+		    float: left;
+		    cursor: pointer;
+		    margin-right: 2%;
+		}
+		.fields .field-value {
+			border: 1px solid #24A33F !important;
+    		color: #434744;
+    		margin: 0 !important;
+    		padding: 0 0 0 5px !important;
+    		box-sizing: border-box;
+    		height: 28px;
+    		background: #FFFFFF;
+    		box-shadow: none !important;
+    		border-radius: 2px;
+    		outline: none;
+    		vertical-align: top !important;
+    		width:62%;
+		}
+
+		
+	</style>
+</head>
+<body>
+<div class="main">
+
+	<!-- instructions -->
+	<h1>Pain Quality Assessment Scale:</h1>
+	<div class="instructions">
+		<h2><b><i>Instructions</i></b></h2>
+		<p>There are different aspects and types of pain that people experience and that we are interested in measuring. Pain can feel sharp, hot, cold, dull, and achy. Some pains may feel like they are very superficial (at skin-level), or they may feel like they are from deep inside your body. Pain can be described as unpleasant and also can have different time qualities.</p>
+		<p>The Pain Quality Assessment Scale helps us measure these and other different aspects of your pain. For one person, a pain might feel extremely hot and burning, but not at all dull, while another patient may not experience any burning pain, but feel like their pain is very dull and achy. Therefore, we expect you to rate very high on some of the scales below and very low on others.</p>
+		<p>Please use the 20 rating scales below to rate how much of each different pain quality and type you may or may not have felt <b><ins>over the past week on average</ins></b>.</p>
+	</div>
+
+	<!-- name and email -->
+	<div class="fields">
+		<div class="field-row">	
+			<label class="field-label">Name<em class="asterisk">*</em> </label>
+			<input type="text" class="field-value" placeholder="Enter your name here">
+		</div>	
+		<div class="field-row">	
+			<label class="field-label">E-mail<em class="asterisk">*</em> </label>
+			<input type="text" class="field-value" placeholder="Enter your email here">
+		</div>
+	</div>
+
+	<!-- remaining questions -->
+	<div class="question">
+		<p>1. How intense has your pain been over the past week, on average?</p>
+		<div class="scale">
+			<label class="container"><a>0</a>
+				<input type="radio" name="question1" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>1</a>
+				<input type="radio" name="question1">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question1">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question1">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question1">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question1">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>6</a>
+				<input type="radio" name="question1">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>7</a>
+				<input type="radio" name="question1">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>8</a>
+				<input type="radio" name="question1">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>9</a>
+				<input type="radio" name="question1">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>10</a>
+				<input type="radio" name="question1">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<div class="explanation">
+		<i class="left"><small>No pain</small></i>
+		<i class="right"><small>Intense pain</small></i>
+	</div>
+	<div class="question">
+		<p>2. How sharp has your pain felt over the past week?</p>
+		<div class="scale">
+			<label class="container"><a>0</a>
+				<input type="radio" name="question2" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>1</a>
+				<input type="radio" name="question2">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question2">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question2">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question2">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question2">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>6</a>
+				<input type="radio" name="question2">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>7</a>
+				<input type="radio" name="question2">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>8</a>
+				<input type="radio" name="question2">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>9</a>
+				<input type="radio" name="question2">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>10</a>
+				<input type="radio" name="question2">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<div class="explanation">
+		<i class="left"><small>No pain</small></i>
+		<i class="right"><small>Intense pain</small></i>
+	</div>
+	<div class="question">
+		<p>3. How hot has your pain felt over the past week?</p>
+		<div class="scale">
+			<label class="container"><a>0</a>
+				<input type="radio" name="question3" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>1</a>
+				<input type="radio" name="question3">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question3">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question3">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question3">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question3">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>6</a>
+				<input type="radio" name="question3">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>7</a>
+				<input type="radio" name="question3">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>8</a>
+				<input type="radio" name="question3">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>9</a>
+				<input type="radio" name="question3">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>10</a>
+				<input type="radio" name="question3">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<div class="explanation">
+		<i class="left"><small>No pain</small></i>
+		<i class="right"><small>Intense pain</small></i>
+	</div>
+	<div class="question">
+		<p>4. How dull has your pain felt over the past week?</p>
+		<div class="scale">
+			<label class="container"><a>0</a>
+				<input type="radio" name="question4" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>1</a>
+				<input type="radio" name="question4">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question4">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question4">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question4">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question4">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>6</a>
+				<input type="radio" name="question4">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>7</a>
+				<input type="radio" name="question4">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>8</a>
+				<input type="radio" name="question4">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>9</a>
+				<input type="radio" name="question4">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>10</a>
+				<input type="radio" name="question4">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<div class="explanation">
+		<i class="left"><small>No pain</small></i>
+		<i class="right"><small>Intense pain</small></i>
+	</div>
+	<div class="question">
+		<p>5. How cold has your pain felt over the past week?</p>
+		<div class="scale">
+			<label class="container"><a>0</a>
+				<input type="radio" name="question5" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>1</a>
+				<input type="radio" name="question5">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question5">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question5">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question5">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question5">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>6</a>
+				<input type="radio" name="question5">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>7</a>
+				<input type="radio" name="question5">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>8</a>
+				<input type="radio" name="question5">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>9</a>
+				<input type="radio" name="question5">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>10</a>
+				<input type="radio" name="question5">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<div class="explanation">
+		<i class="left"><small>No pain</small></i>
+		<i class="right"><small>Intense pain</small></i>
+	</div>
+	<div class="question">
+		<p>6. How sensitive has your skin been to light touch or clothing rubbing against it over the past week?</p>
+		<div class="scale">
+			<label class="container"><a>0</a>
+				<input type="radio" name="question6" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>1</a>
+				<input type="radio" name="question6">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question6">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question6">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question6">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question6">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>6</a>
+				<input type="radio" name="question6">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>7</a>
+				<input type="radio" name="question6">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>8</a>
+				<input type="radio" name="question6">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>9</a>
+				<input type="radio" name="question6">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>10</a>
+				<input type="radio" name="question6">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<div class="explanation">
+		<i class="left"><small>No pain</small></i>
+		<i class="right"><small>Intense pain</small></i>
+	</div>
+	<div class="question">
+		<p>7. How tender has your pain been when something has pressed against it over the past week?</p>
+		<div class="scale">
+			<label class="container"><a>0</a>
+				<input type="radio" name="question7" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>1</a>
+				<input type="radio" name="question7">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question7">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question7">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question7">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question7">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>6</a>
+				<input type="radio" name="question7">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>7</a>
+				<input type="radio" name="question7">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>8</a>
+				<input type="radio" name="question7">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>9</a>
+				<input type="radio" name="question7">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>10</a>
+				<input type="radio" name="question7">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<div class="explanation">
+		<i class="left"><small>No pain</small></i>
+		<i class="right"><small>Intense pain</small></i>
+	</div>
+	<div class="question">
+		<p>8. How itchy has your pain felt over the past week?</p>
+		<div class="scale">
+			<label class="container"><a>0</a>
+				<input type="radio" name="question8" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>1</a>
+				<input type="radio" name="question8">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question8">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question8">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question8">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question8">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>6</a>
+				<input type="radio" name="question8">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>7</a>
+				<input type="radio" name="question8">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>8</a>
+				<input type="radio" name="question8">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>9</a>
+				<input type="radio" name="question8">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>10</a>
+				<input type="radio" name="question8">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<div class="explanation">
+		<i class="left"><small>No pain</small></i>
+		<i class="right"><small>Intense pain</small></i>
+	</div>
+	<div class="question">
+		<p>9. How much has your pain felt like it has been shooting over the past week?</p>
+		<div class="scale">
+			<label class="container"><a>0</a>
+				<input type="radio" name="question9" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>1</a>
+				<input type="radio" name="question9">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question9">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question9">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question9">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question9">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>6</a>
+				<input type="radio" name="question9">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>7</a>
+				<input type="radio" name="question9">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>8</a>
+				<input type="radio" name="question9">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>9</a>
+				<input type="radio" name="question9">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>10</a>
+				<input type="radio" name="question9">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<div class="explanation">
+		<i class="left"><small>No pain</small></i>
+		<i class="right"><small>Intense pain</small></i>
+	</div>
+	<div class="question">
+		<p>10. How numb has your pain felt over the past week?</p>
+		<div class="scale">
+			<label class="container"><a>0</a>
+				<input type="radio" name="question10" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>1</a>
+				<input type="radio" name="question10">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question10">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question10">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question10">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question10">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>6</a>
+				<input type="radio" name="question10">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>7</a>
+				<input type="radio" name="question10">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>8</a>
+				<input type="radio" name="question10">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>9</a>
+				<input type="radio" name="question10">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>10</a>
+				<input type="radio" name="question10">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<div class="explanation">
+		<i class="left"><small>No pain</small></i>
+		<i class="right"><small>Intense pain</small></i>
+	</div>
+	<div class="question">
+		<p>11. How much has your pain sensations felt eletrical over the past week?</p>
+		<div class="scale">
+			<label class="container"><a>0</a>
+				<input type="radio" name="question11" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>1</a>
+				<input type="radio" name="question11">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question11">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question11">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question11">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question11">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>6</a>
+				<input type="radio" name="question11">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>7</a>
+				<input type="radio" name="question11">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>8</a>
+				<input type="radio" name="question11">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>9</a>
+				<input type="radio" name="question11">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>10</a>
+				<input type="radio" name="question11">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<div class="explanation">
+		<i class="left"><small>No pain</small></i>
+		<i class="right"><small>Intense pain</small></i>
+	</div>
+	<div class="question">
+		<p>12. How tingling has your pain felt over the past week?</p>
+		<div class="scale">
+			<label class="container"><a>0</a>
+				<input type="radio" name="question12" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>1</a>
+				<input type="radio" name="question12">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question12">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question12">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question12">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question12">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>6</a>
+				<input type="radio" name="question12">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>7</a>
+				<input type="radio" name="question12">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>8</a>
+				<input type="radio" name="question12">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>9</a>
+				<input type="radio" name="question12">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>10</a>
+				<input type="radio" name="question12">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<div class="explanation">
+		<i class="left"><small>No pain</small></i>
+		<i class="right"><small>Intense pain</small></i>
+	</div>
+	<div class="question">
+		<p>13. How cramping has your pain felt over the past week?</p>
+		<div class="scale">
+			<label class="container"><a>0</a>
+				<input type="radio" name="question13" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>1</a>
+				<input type="radio" name="question13">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question13">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question13">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question13">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question13">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>6</a>
+				<input type="radio" name="question13">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>7</a>
+				<input type="radio" name="question13">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>8</a>
+				<input type="radio" name="question13">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>9</a>
+				<input type="radio" name="question13">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>10</a>
+				<input type="radio" name="question13">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<div class="explanation">
+		<i class="left"><small>No pain</small></i>
+		<i class="right"><small>Intense pain</small></i>
+	</div>
+	<div class="question">
+		<p>14. How radiating has your pain felt over the past week?</p>
+		<div class="scale">
+			<label class="container"><a>0</a>
+				<input type="radio" name="question14" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>1</a>
+				<input type="radio" name="question14">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question14">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question14">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question14">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question14">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>6</a>
+				<input type="radio" name="question14">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>7</a>
+				<input type="radio" name="question14">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>8</a>
+				<input type="radio" name="question14">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>9</a>
+				<input type="radio" name="question14">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>10</a>
+				<input type="radio" name="question14">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<div class="explanation">
+		<i class="left"><small>No pain</small></i>
+		<i class="right"><small>Intense pain</small></i>
+	</div>
+	<div class="question">
+		<p>15. How throbbing has your pain felt over the past week?</p>
+		<div class="scale">
+			<label class="container"><a>0</a>
+				<input type="radio" name="question15" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>1</a>
+				<input type="radio" name="question15">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question15">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question15">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question15">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question15">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>6</a>
+				<input type="radio" name="question15">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>7</a>
+				<input type="radio" name="question15">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>8</a>
+				<input type="radio" name="question15">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>9</a>
+				<input type="radio" name="question15">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>10</a>
+				<input type="radio" name="question15">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<div class="explanation">
+		<i class="left"><small>No pain</small></i>
+		<i class="right"><small>Intense pain</small></i>
+	</div>
+	<div class="question">
+		<p>16. How aching has your pain felt over the past week?</p>
+		<div class="scale">
+			<label class="container"><a>0</a>
+				<input type="radio" name="question16" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>1</a>
+				<input type="radio" name="question16">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question16">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question16">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question16">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question16">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>6</a>
+				<input type="radio" name="question16">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>7</a>
+				<input type="radio" name="question16">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>8</a>
+				<input type="radio" name="question16">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>9</a>
+				<input type="radio" name="question16">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>10</a>
+				<input type="radio" name="question16">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<div class="explanation">
+		<i class="left"><small>No pain</small></i>
+		<i class="right"><small>Intense pain</small></i>
+	</div>
+	<div class="question">
+		<p>17. How heavy has your pain felt over the past week?</p>
+		<div class="scale">
+			<label class="container"><a>0</a>
+				<input type="radio" name="question17" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>1</a>
+				<input type="radio" name="question17">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question17">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question17">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question17">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question17">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>6</a>
+				<input type="radio" name="question17">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>7</a>
+				<input type="radio" name="question17">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>8</a>
+				<input type="radio" name="question17">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>9</a>
+				<input type="radio" name="question17">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>10</a>
+				<input type="radio" name="question17">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<div class="explanation">
+		<i class="left"><small>No pain</small></i>
+		<i class="right"><small>Intense pain</small></i>
+	</div>
+	<div class="question">
+		<p>18. How unpleasant has your pain felt?</p>
+		<div class="scale">
+			<label class="container"><a>0</a>
+				<input type="radio" name="question18" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>1</a>
+				<input type="radio" name="question18">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question18">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question18">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question18">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question18">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>6</a>
+				<input type="radio" name="question18">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>7</a>
+				<input type="radio" name="question18">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>8</a>
+				<input type="radio" name="question18">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>9</a>
+				<input type="radio" name="question18">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>10</a>
+				<input type="radio" name="question18">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<div class="explanation">
+		<i class="left"><small>No pain</small></i>
+		<i class="right"><small>Intense pain</small></i>
+	</div>
+	<div class="question">
+		<p>19. We want you to give us an estimate of the severity of your deep versus surface pain over the past week. We want you to rate each location of pain separately. We realize that it can be difficult to make these estimates, and most likely it will be a "best guess" but please give us your best estimate.
+		<br><br>How intense is your deep pain?</p>
+		<div class="scale">
+			<label class="container"><a>0</a>
+				<input type="radio" name="question19a" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>1</a>
+				<input type="radio" name="question19a">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question19a">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question19a">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question19a">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question19a">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>6</a>
+				<input type="radio" name="question19a">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>7</a>
+				<input type="radio" name="question19a">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>8</a>
+				<input type="radio" name="question19a">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>9</a>
+				<input type="radio" name="question19a">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>10</a>
+				<input type="radio" name="question19a">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<div class="explanation">
+		<i class="left"><small>No pain</small></i>
+		<i class="right"><small>Intense pain</small></i>
+	</div>
+	<div class="question">
+		<p>How intense is your surface pain?</p>
+		<div class="scale">
+			<label class="container"><a>0</a>
+				<input type="radio" name="question19b" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>1</a>
+				<input type="radio" name="question19b">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question19b">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question19b">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question19b">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question19b">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>6</a>
+				<input type="radio" name="question19b">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>7</a>
+				<input type="radio" name="question19b">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>8</a>
+				<input type="radio" name="question19b">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>9</a>
+				<input type="radio" name="question19b">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>10</a>
+				<input type="radio" name="question19b">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<div class="explanation">
+		<i class="left"><small>No pain</small></i>
+		<i class="right"><small>Intense pain</small></i>
+	</div>
+	<div class="question">
+		<p>20. Pain can also have different time qualities. For some people, the pain comes and goes and so they have some moments that are completely without pain; in other words the pain "comes and goes." This is called intermittent pain. Others are never pain free, but their pain types and pain severity can vary from one moment to the next. This is called variable pain. For these people the increases can be severe, so that they feel they have moments of very intense pain("breakthrough" pain), but at other times they can feel lower levels of pain ("background" pain). Still, they are never pain free. Other people have pain that really does not change that much from one moment to another. This is called stable pain.
+		<br><br>Which of these best describes the time pattern of your pain?</p>
+		<div class="scale vertical-question">
+			<label class="container"><a class="horizontal">I have intermittent pain</a>
+				<input type="radio" name="question20" checked="checked">
+				<span class="checkmark"></span>
+			</label><br>
+			<label class="container"><a class="horizontal">I have variable pain</a>
+				<input type="radio" name="question20">
+				<span class="checkmark"></span>
+			</label><br>
+			<label class="container"><a class="horizontal">I have stable pain</a>
+				<input type="radio" name="question20">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+</div>
+</body>
+</html>
