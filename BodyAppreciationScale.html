@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Body Appreciation Scale 2</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<style type="text/css">
+
+		/* overall */
+		* {font-family: 'Roboto', sans-serif;}
+		.main { margin:35px; }
+
+		.left { float:left; }
+		.right { float:right; }
+		.scale, .question p, 
+		.fields, .instructions, 
+		.explanation { 
+			width:740px; 
+		}
+
+		/* The container */
+		.container {
+		    display: block;
+		    position: relative;
+		    padding-left: 45px;
+		    margin-bottom: 12px;
+		    cursor: pointer;
+		    font-size: 22px;
+		    -webkit-user-select: none;
+		    -moz-user-select: none;
+		    -ms-user-select: none;
+		    user-select: none;
+		}
+
+		/* Hide the browser's default radio button */
+		.container input {
+		    position: absolute;
+		    opacity: 0;
+		    cursor: pointer;
+		}
+
+		/* Create a custom radio button */
+		.checkmark {
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    height: 25px;
+		    width: 25px;
+		    background-color: #eee;
+		    border-radius: 50%;
+		}
+
+		/* On mouse-over, add a grey background color */
+		.container:hover input ~ .checkmark {
+		    background-color: #ccc;
+		}
+
+		/* When the radio button is checked, add a blue background */
+		.container input:checked ~ .checkmark {
+		    background-color: #29BA48;
+		}
+
+		/* Create the indicator (the dot/circle - hidden when not checked) */
+		.checkmark:after {
+		    content: "";
+		    position: absolute;
+		    display: none;
+		}
+
+		/* Show the indicator (dot/circle) when checked */
+		.container input:checked ~ .checkmark:after {
+		    display: block;
+		}
+
+		/* Style the indicator (dot/circle) */
+		.container .checkmark:after {
+		 	top: 9px;
+			left: 9px;
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background: white;
+		}
+
+		/* Style the rows */
+		.question-divider { width:740px; float:left;}
+		.vertical-question .horizontal { width:350px!important; }
+		.vertical-question label {height:0px !important;}
+		.vertical-question {margin-left:25px;}
+
+		.scale label {
+			display: inline-block;
+		    height: 20px;
+		    vertical-align: top;
+		    padding-top: 40px;
+		    padding-right:12px;
+		}
+
+		.scale input, .scale span {
+			display: inline-block;
+			vertical-align: top;
+		}
+
+		.scale a {
+			font-size:16px;
+			position:absolute;
+			top:4px;
+			left:32px;
+		}
+		.explanation {
+			margin-top:-35px;
+			height:55px;
+		}
+		.explanation .right {
+			margin-right:75px;
+		}
+
+	</style>
+</head>
+<body>
+<small><a href="index.html">Back to Main</a></small>
+<div class="main">
+	
+	<!-- instructions -->
+	<h1>Body Appreciation Scale 2</h1>
+	<div class="instructions">
+		<p><b>Answer YES or NO for each questionnaire item.</b></p>
+	</div>
+
+	<!-- Divider -->
+	<hr class="question-divider"><br>
+
+	<!-- Question 1. -->
+	<div class="question">
+		<p>1. I respect my body.</p>
+		<div class="scale vertical-question">
+			<label class="container"><a class="horizontal">Yes</a>
+				<input type="radio" name="question1" checked="checked">
+				<span class="checkmark"></span>
+			</label><br>
+			<label class="container"><a class="horizontal">No</a>
+				<input type="radio" name="question1">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+
+	<!-- Divider -->
+	<hr class="question-divider"><br>
+
+	<!-- Question 2. -->
+	<div class="question">
+		<p>2. I feel good about my body.</p>
+		<div class="scale vertical-question">
+			<label class="container"><a class="horizontal">Yes</a>
+				<input type="radio" name="question2" checked="checked">
+				<span class="checkmark"></span>
+			</label><br>
+			<label class="container"><a class="horizontal">No</a>
+				<input type="radio" name="question2">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+
+	<!-- Divider -->
+	<hr class="question-divider"><br>
+
+	<!-- Question 3. -->
+	<div class="question">
+		<p>3. I feel that my body has at least some good qualities.</p>
+		<div class="scale vertical-question">
+			<label class="container"><a class="horizontal">Yes</a>
+				<input type="radio" name="question3" checked="checked">
+				<span class="checkmark"></span>
+			</label><br>
+			<label class="container"><a class="horizontal">No</a>
+				<input type="radio" name="question3">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+
+	<!-- Divider -->
+	<hr class="question-divider"><br>
+
+	<!-- Question 4. -->
+	<div class="question">
+		<p>4. I take a positive attitude towards my body.</p>
+		<div class="scale vertical-question">
+			<label class="container"><a class="horizontal">Yes</a>
+				<input type="radio" name="question4" checked="checked">
+				<span class="checkmark"></span>
+			</label><br>
+			<label class="container"><a class="horizontal">No</a>
+				<input type="radio" name="question4">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+
+	<!-- Divider -->
+	<hr class="question-divider"><br>
+
+	<!-- Question 5. -->
+	<div class="question">
+		<p>5. I am attentive to my body’s needs.</p>
+		<div class="scale vertical-question">
+			<label class="container"><a class="horizontal">Yes</a>
+				<input type="radio" name="question5" checked="checked">
+				<span class="checkmark"></span>
+			</label><br>
+			<label class="container"><a class="horizontal">No</a>
+				<input type="radio" name="question5">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+
+	<!-- Divider -->
+	<hr class="question-divider"><br>
+
+	<!-- Question 6. -->
+	<div class="question">
+		<p>6. I feel love for my body.</p>
+		<div class="scale vertical-question">
+			<label class="container"><a class="horizontal">Yes</a>
+				<input type="radio" name="question6" checked="checked">
+				<span class="checkmark"></span>
+			</label><br>
+			<label class="container"><a class="horizontal">No</a>
+				<input type="radio" name="question6">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+
+	<!-- Divider -->
+	<hr class="question-divider"><br>
+
+	<!-- Question 7. -->
+	<div class="question">
+		<p>7. I appreciate the different and unique characteristics of my body.</p>
+		<div class="scale vertical-question">
+			<label class="container"><a class="horizontal">Yes</a>
+				<input type="radio" name="question7" checked="checked">
+				<span class="checkmark"></span>
+			</label><br>
+			<label class="container"><a class="horizontal">No</a>
+				<input type="radio" name="question7">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+
+	<!-- Divider -->
+	<hr class="question-divider"><br>
+
+	<!-- Question 8. -->
+	<div class="question">
+		<p>8. My behavior reveals my positive attitude toward my body; for example, I hold my head high and smile.</p>
+		<div class="scale vertical-question">
+			<label class="container"><a class="horizontal">Yes</a>
+				<input type="radio" name="question8" checked="checked">
+				<span class="checkmark"></span>
+			</label><br>
+			<label class="container"><a class="horizontal">No</a>
+				<input type="radio" name="question8">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+
+	<!-- Divider -->
+	<hr class="question-divider"><br>
+
+	<!-- Question 9. -->
+	<div class="question">
+		<p>9. I am comfortable in my body.</p>
+		<div class="scale vertical-question">
+			<label class="container"><a class="horizontal">Yes</a>
+				<input type="radio" name="question9" checked="checked">
+				<span class="checkmark"></span>
+			</label><br>
+			<label class="container"><a class="horizontal">No</a>
+				<input type="radio" name="question9">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+
+	<!-- Divider -->
+	<hr class="question-divider"><br>
+
+	<!-- Question 10. -->
+	<div class="question">
+		<p>10. I feel like I am beautiful even if I am different from media images of attractive people (e.g., models, actresses/actors).</p>
+		<div class="scale vertical-question">
+			<label class="container"><a class="horizontal">Yes</a>
+				<input type="radio" name="question10" checked="checked">
+				<span class="checkmark"></span>
+			</label><br>
+			<label class="container"><a class="horizontal">No</a>
+				<input type="radio" name="question10">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+
+	<!-- Divider -->
+	<hr class="question-divider"><br>
+
+</div>
+</body>
+</html>
