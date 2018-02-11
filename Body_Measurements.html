@@ -49,7 +49,6 @@
 	</style>
 </head>
 <body>
-<small><a href="index.html">Back to Main</a></small>
 <div class="main">	
 
 	<!-- Heading -->
@@ -60,7 +59,6 @@
 		<h2><b><i>Instructions</i></b></h2>
 		<p>Please self-measure or have a therapist/family or friend measure you. Please report in kg and cm, if possible. Download and print the Body Measurement Form below and keep track for your own records.</p>
 	</div>
-	
 
 	<!-- Fields -->
 	<div class="fields">
@@ -160,8 +158,24 @@
 			<label class="field-label">Left Ankle<em class="asterisk">*</em> </label>
 			<input type="text" class="field-value" placeholder="Left Ankle">
 		</div>	
-
 	</div>
 </div>
+
+<script type="text/javascript">
+	
+	//function for generating the csv
+	var header = "Name, E-mail, Weight, Weight Measurement, Neck, Shoulder Width, Bustline, Under Bustline, Waist, Right Biceps, Right Forearm, Right Wrist, Left Biceps, Left Forearm, Left Wrist, Hips, Right Upper Thigh, Right Just Above Knee, Right Mid Calf, Right Ankle, Left Upper Thigh, Left Just Above Knee, Left Mid Calf, Left Ankle\r\n";
+	function grabvals() {
+		var csv = [];
+		for (var i = 0; i < document.getElementsByClassName("field-value").length; i++) {
+			csv.push(document.getElementsByClassName("field-value")[i].value);
+		}
+		alert(header+csv.join()+"\r\n");
+	} 
+
+</script>
+
+<input type="button" name="submit" value="Submit" onclick="grabvals();">
+
 </body>
 </html>

@@ -14,3 +14,12 @@ files created for lipedema project
 2. Weight related symptom measure
 3. Keytone tracking
 4. Obesity and Weight-Loss Quality-of- Life Questionnaire
+
+# Finished forms... (Just need to style button)
+1. Body Measurements <-- need to change to select
+2. Pain Quality Scale <--- need to grab name and email
+3. Body Appreciation Scale
+4. 36 Question Survey
+
+# IDEA to tell catherine
+she needs a csv... why not google sheets?

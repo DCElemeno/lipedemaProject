@@ -1,0 +1,54 @@
+### LIPEDEMA TODO
+
+==========================================================================
+# GENERAL:
+
+1. Better footer
+	a.	Use correct png - full width
+	b.	Add copyright links
+
+2. Header needs multiple items... 
+	a.  Dropdown for navigation?
+	b.  Some kind of logo
+	c.  Better appearence
+
+3. Change how membership works
+
+4. Put pages into something that catherine can edit herself - use templates
+
+=========================================================================
+# HOME PAGE: (for members)
+
+1. Figure out what design should be
+
+	A. Split up into ACCESSMENTS and OTHER?
+		I. Accessments
+			DONE Blocks
+			DONE Need to add mouseover shadow/grow to blocks
+			- When you click a box you go to the accessment
+
+
+2. Make design using visual composer somehow
+
+===============================================================================
+# MAIN PAGE: (landing page)
+
+1. Figure out what design should be
+
+2. Make design using visual composer
+
+=============================================================================
+
+# FORMS: 
+
+1. Make remaining forms
+
+2. Hook up to csv
+
+3. Find the right way to embedd into page
+
+ff3a6f
+
+a63231
+
+

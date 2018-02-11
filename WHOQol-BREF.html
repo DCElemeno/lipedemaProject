@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>36 Question Health Survey</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<style type="text/css">
+
+		/* overall */
+		* {font-family: 'Roboto', sans-serif;}
+		.main { margin:35px; }
+		.left { float:left; }
+		.right { float:right; }
+		.scale, .question p, 
+		.fields, .instructions, 
+		.explanation { 
+			width:740px; 
+		}
+
+		/* The container */
+		.container {
+		    display: block;
+		    position: relative;
+		    padding-left: 45px;
+		    margin-bottom: 12px;
+		    cursor: pointer;
+		    font-size: 22px;
+		    -webkit-user-select: none;
+		    -moz-user-select: none;
+		    -ms-user-select: none;
+		    user-select: none;
+		}
+
+		/* Hide the browser's default radio button */
+		.container input {
+		    position: absolute;
+		    opacity: 0;
+		    cursor: pointer;
+		}
+
+		/* Create a custom radio button */
+		.checkmark {
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    height: 25px;
+		    width: 25px;
+		    background-color: #eee;
+		    border-radius: 50%;
+		}
+
+		/* On mouse-over, add a grey background color */
+		.container:hover input ~ .checkmark {
+		    background-color: #ccc;
+		}
+
+		/* When the radio button is checked, add a blue background */
+		.container input:checked ~ .checkmark {
+		    background-color: #29BA48;
+		}
+
+		/* Create the indicator (the dot/circle - hidden when not checked) */
+		.checkmark:after {
+		    content: "";
+		    position: absolute;
+		    display: none;
+		}
+
+		/* Show the indicator (dot/circle) when checked */
+		.container input:checked ~ .checkmark:after {
+		    display: block;
+		}
+
+		/* Style the indicator (dot/circle) */
+		.container .checkmark:after {
+		 	top: 9px;
+			left: 9px;
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background: white;
+		}
+
+		/* Style the rows */
+		.question-divider { width:740px; float:left;}
+		.vertical-question .horizontal { width:350px!important; }
+		.vertical-question label {height:0px !important;}
+		.vertical-question {margin-left:25px;}
+
+		.scale label {
+			display: inline-block;
+		    height: 20px;
+		    vertical-align: top;
+		    padding-top: 40px;
+		    padding-right:12px;
+		}
+
+		.scale input, .scale span {
+			display: inline-block;
+			vertical-align: top;
+		}
+
+		.scale a {
+			font-size:16px;
+			position:absolute;
+			top:4px;
+			left:32px;
+		}
+		.explanation {
+			margin-top:-35px;
+			height:55px;
+		}
+		.explanation .right {
+			margin-right:75px;
+		}
+
+		/* For table quesitons */
+		.question-table-header { 
+			margin-left: 460px;
+			display: inline-block;
+		}
+		.question-table-header p {
+			display: inline-block;
+		    flex-direction: row;
+		    margin-right:8px;
+		}
+		.table-question { 
+			display: flex;
+		    flex-direction: row;
+		    width:740px;
+		}
+		.left-question { 
+			max-width:380px; 
+			float:left;
+		}
+		.left-scale { 
+			position:absolute; 
+			left:500px;
+		}
+		.yes-no {
+			margin-right:33px !important;
+		}
+
+		/* For text fields */
+		.fields .asterisk { color:#24A33F; }
+		.fields .field-row {
+			width: 100%;
+    		padding: 5px 0px 5px 0px;
+    		clear: both;
+		}
+		.fields .field-label {
+    		font-size: 16px !important;
+    		line-height: 16px !important;
+    		color: #444444;
+    		font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+        	display: block;
+		    width: 35%;
+		    float: left;
+		    cursor: pointer;
+		    margin-right: 2%;
+		}
+		.fields .field-value {
+			border: 1px solid #24A33F !important;
+    		color: #434744;
+    		margin: 0 !important;
+    		padding: 0 0 0 5px !important;
+    		box-sizing: border-box;
+    		height: 28px;
+    		background: #FFFFFF;
+    		box-shadow: none !important;
+    		border-radius: 2px;
+    		outline: none;
+    		vertical-align: top !important;
+    		width:62%;
+		}
+		.small-field {
+			width:70px !important;
+		}
+		.date-slash {
+			margin:10px;
+		}
+	</style>
+</head>
+<body>
+<small><a href="index.html">Back to Main</a></small>
+<div class="main">
+	
+	<!-- instructions -->
+	<h1>WHOQol-BREF:</h1>
+	<div class="instructions">
+		<h2><b><i>About You</i></b></h2>
+		<p><b>Before you begin we would like to ask you to answer a few general questions about yourself by selecting the correct answer or by filling in the space provided</b></p>
+	</div>
+
+	<!-- Divider -->
+	<hr class="question-divider"><br>
+
+	<!-- Question 1. -->
+	<div class="question">
+		<p>1. What is your gender:</p>
+		<div class="scale vertical-question">
+			<label class="container"><a class="horizontal">Male</a>
+				<input type="radio" name="infoquestion1" value="Male" checked="checked">
+				<span class="checkmark"></span>
+			</label><br>
+			<label class="container"><a class="horizontal">Female</a>
+				<input type="radio" name="infoquestion1" value="Female">
+				<span class="checkmark"></span>
+			</label><br>
+			<label class="container"><a class="horizontal">Prefer not to say</a>
+				<input type="radio" name="infoquestion1" value="Other">
+				<span class="checkmark"></span>
+			</label><br>
+		</div>
+	</div>
+
+	<!-- Divider -->
+	<hr class="question-divider"><br>
+
+	<!-- Question 2. -->
+	<div class="fields">
+		<div class="field-row">	
+			<label class="field-label">2. What is your date of birth?</label>
+			<input type="text" name="infoquestion2a" class="field-value small-field" placeholder="Day">
+			<b class="date-slash">/</b>
+			<input type="text" name="infoquestion2b" class="field-value small-field" placeholder="Month">
+			<b class="date-slash">/</b>
+			<input type="text" name="infoquestion2c" class="field-value small-field" placeholder="Year">
+		</div>	
+	</div>
+
+	<!-- Divider -->
+	<hr class="question-divider"><br>
+
+	<!-- Question 3. -->
+	<div class="question">
+		<p>3. What is the highest education you recieved?</p>
+		<div class="scale vertical-question">
+			<label class="container"><a class="horizontal">None at all</a>
+				<input type="radio" name="infoquestion3" value="None" checked="checked">
+				<span class="checkmark"></span>
+			</label><br>
+			<label class="container"><a class="horizontal">Elementary school</a>
+				<input type="radio" name="infoquestion3" value="Elementary">
+				<span class="checkmark"></span>
+			</label><br>
+			<label class="container"><a class="horizontal">High School</a>
+				<input type="radio" name="infoquestion3" value="High School">
+				<span class="checkmark"></span>
+			</label><br>
+			<label class="container"><a class="horizontal">College</a>
+				<input type="radio" name="infoquestion3" value="College">
+				<span class="checkmark"></span>
+			</label><br>
+		</div>
+	</div>
+
+	<!-- Divider -->
+	<hr class="question-divider"><br>
+
+	<!-- Question 4. -->
+	<div class="question">
+		<p>4. What is your marital status?</p>
+		<div class="scale vertical-question">
+			<label class="container"><a class="horizontal">Single</a>
+				<input type="radio" name="infoquestion4" value="single" checked="checked">
+				<span class="checkmark"></span>
+			</label><br>
+			<label class="container"><a class="horizontal">Married</a>
+				<input type="radio" name="infoquestion4" value="married">
+				<span class="checkmark"></span>
+			</label><br>
+			<label class="container"><a class="horizontal">Living as Married</a>
+				<input type="radio" name="infoquestion4" value="living as married">
+				<span class="checkmark"></span>
+			</label><br>
+			<label class="container"><a class="horizontal">Separated</a>
+				<input type="radio" name="infoquestion4" value="seperated">
+				<span class="checkmark"></span>
+			</label><br>
+			<label class="container"><a class="horizontal">Divorced</a>
+				<input type="radio" name="infoquestion4" value="divorced">
+				<span class="checkmark"></span>
+			</label><br>
+			<label class="container"><a class="horizontal">Widowed</a>
+				<input type="radio" name="infoquestion4" value="widowed">
+				<span class="checkmark"></span>
+			</label><br>
+		</div>
+	</div>
+
+	<!-- Divider -->
+	<hr class="question-divider"><br>
+
+	<!-- Question 5. -->
+	<div class="question">
+		<p>5. Are you currently ill?</p>
+		<div class="scale vertical-question">
+			<label class="container"><a class="horizontal">Yes</a>
+				<input type="radio" name="infoquestion5" value="yes" checked="checked">
+				<span class="checkmark"></span>
+			</label><br>
+			<label class="container"><a class="horizontal">No</a>
+				<input type="radio" name="infoquestion5" value="no">
+				<span class="checkmark"></span>
+			</label><br>
+		</div>
+	</div>
+
+	<!-- Divider -->
+	<hr class="question-divider"><br>
+
+	<!-- Question 6. -->
+	<div class="fields">
+		<div class="field-row">	
+			<label class="field-label">6. If something is wrong with your health, what do you think it is?</label>
+			<input type="text" name="infoquestion6" class="field-value" placeholder="illness/problem">
+		</div>	
+	</div>
+
+	<!-- Divider -->
+	<br><hr class="question-divider"><br><br>
+
+	<!-- Question Table Headings -->
+	<div class="instructions">
+		<h2><b><i>Instructions</i></b></h2>
+		<p>This questionnaire asks how you feel about your quality of life, health, or other areas of your life. Please answer all the questions. If you are unsure about which response to give to a question, please choose the one that appears most appropriate. This can often be your first response</p>
+		<p>Please keep in mind your standards, hopes, pleasures and concerns. We ask that you think about your life in the last two weeks and select the number on the scale that gives the best answer.</p>
+	</div>
+
+	<div class="question-table-header">
+		<p>1<br>Very Poor</p>
+		<p>2<br>Poor</p>
+		<p>3<br>Neither</p>
+		<p>4<br>Good</p>
+		<p>5<br>Very Good</p>
+	</div>
+
+	<!-- Question 1 -->
+	<div class="question table-question">
+		<div class="left-question">
+			1. How would you rate your quality of life?
+		</div>
+		<div class="left-scale scale">
+			<label class="container"><a>1</a>
+				<input type="radio" name="question1" value="1" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question1" value="2">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question1" value="3">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question1" value="4">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question1" value="5">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<br><br>
+
+	<!-- Question 2 -->
+	<div class="question table-question">
+		<div class="left-question">
+			2. How satisfied are you with your health?
+		</div>
+		<div class="left-scale scale">
+			<label class="container"><a>1</a>
+				<input type="radio" name="question2" value="1" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question2" value="2">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question2" value="3">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question2" value="4">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question2" value="5">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<br><br>
+
+	<!-- Question Table Headings -->
+	<div class="instructions">
+		<p>The following questions ask about <b>how much</b> you have experienced certain things in the last two weeks.</p>
+	</div>
+
+	<div class="question-table-header">
+		<p>1<br>Very Poor</p>
+		<p>2<br>Poor</p>
+		<p>3<br>Neither</p>
+		<p>4<br>Good</p>
+		<p>5<br>Very Good</p>
+	</div>
+
+	<!-- Question 3 -->
+	<div class="question table-question">
+		<div class="left-question">
+			3. To what extent do you feel that physical pain prevents you from doing what you need to do?
+		</div>
+		<div class="left-scale scale">
+			<label class="container"><a>1</a>
+				<input type="radio" name="question3" value="1" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question3" value="2">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question3" value="3">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question3" value="4">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question3" value="5">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<br>
+
+	<!-- Question 4 -->
+	<div class="question table-question">
+		<div class="left-question">
+			4. How much do you need any medical treatment to function in your daily life?
+		</div>
+		<div class="left-scale scale">
+			<label class="container"><a>1</a>
+				<input type="radio" name="question4" value="1" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question4" value="2">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question4" value="3">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question4" value="4">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question2" value="5">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<br>
+
+	<!-- Question 5 -->
+	<div class="question table-question">
+		<div class="left-question">
+			5. How much do you enjoy life?
+		</div>
+		<div class="left-scale scale">
+			<label class="container"><a>1</a>
+				<input type="radio" name="question5" value="1" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question5" value="2">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question5" value="3">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question5" value="4">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question5" value="5">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<br><br>
+
+	<!-- Question 6 -->
+	<div class="question table-question">
+		<div class="left-question">
+			6. To what extent do you feel your life to be meaningful?
+		</div>
+		<div class="left-scale scale">
+			<label class="container"><a>1</a>
+				<input type="radio" name="question6" value="1" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question6" value="2">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question6" value="3">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question6" value="4">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question6" value="5">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<br>
+
+	<!-- Question 7 -->
+	<div class="question table-question">
+		<div class="left-question">
+			7. How well are you able to concentrate?
+		</div>
+		<div class="left-scale scale">
+			<label class="container"><a>1</a>
+				<input type="radio" name="question7" value="1" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question7" value="2">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question7" value="3">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question7" value="4">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question7" value="5">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<br><br>
+
+	<!-- Question 8 -->
+	<div class="question table-question">
+		<div class="left-question">
+			8. How safe do you feel in your daily life?
+		</div>
+		<div class="left-scale scale">
+			<label class="container"><a>1</a>
+				<input type="radio" name="question8" value="1" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question8" value="2">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question8" value="3">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question8" value="4">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question8" value="5">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<br><br>
+
+	<!-- Question 9 -->
+	<div class="question table-question">
+		<div class="left-question">
+			9. How healthy is your physical environment?
+		</div>
+		<div class="left-scale scale">
+			<label class="container"><a>1</a>
+				<input type="radio" name="question9" value="1" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question9" value="2">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question9" value="3">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question9" value="4">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question9" value="5">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<br><br>
+
+	<!-- Question Table Headings -->
+	<div class="instructions">
+		<p>The following questions ask about <b>how completely</b> you experience or were able to do certain things in the last two weeks.</p>
+	</div>
+
+	<div class="question-table-header">
+		<p>1<br>Very Poor</p>
+		<p>2<br>Poor</p>
+		<p>3<br>Neither</p>
+		<p>4<br>Good</p>
+		<p>5<br>Very Good</p>
+	</div>
+
+	<!-- Question 10 -->
+	<div class="question table-question">
+		<div class="left-question">
+			10. Do you have enough energy for everyday life?
+		</div>
+		<div class="left-scale scale">
+			<label class="container"><a>1</a>
+				<input type="radio" name="question10" value="1" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question10" value="2">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question10" value="3">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question10" value="4">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question10" value="5">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<br><br>
+
+	<!-- Question 11 -->
+	<div class="question table-question">
+		<div class="left-question">
+			11. Are you able to accept your bodily appearance?
+		</div>
+		<div class="left-scale scale">
+			<label class="container"><a>1</a>
+				<input type="radio" name="question11" value="1" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question11" value="2">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question11" value="3">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question11" value="4">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question11" value="5">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<br><br>
+
+	<!-- Question 12 -->
+	<div class="question table-question">
+		<div class="left-question">
+			12. Have you enough money to meet your needs?
+		</div>
+		<div class="left-scale scale">
+			<label class="container"><a>1</a>
+				<input type="radio" name="question12" value="1" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question12" value="2">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question12" value="3">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question12" value="4">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question12" value="5">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<br><br>
+
+	<!-- Question 13 -->
+	<div class="question table-question">
+		<div class="left-question">
+			13. How available to you is the information that you need in your day-to-day life?
+		</div>
+		<div class="left-scale scale">
+			<label class="container"><a>1</a>
+				<input type="radio" name="question13" value="1" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question13" value="2">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question13" value="3">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question13" value="4">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question13" value="5">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<br>
+
+	<!-- Question 14 -->
+	<div class="question table-question">
+		<div class="left-question">
+			14. To what extent do you have the opportunity for leisure activities?
+		</div>
+		<div class="left-scale scale">
+			<label class="container"><a>1</a>
+				<input type="radio" name="question14" value="1" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question14" value="2">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question14" value="3">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question14" value="4">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question14" value="5">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<br>
+
+	<!-- Question 15 -->
+	<div class="question table-question">
+		<div class="left-question">
+			15. How well are you able to get around?
+		</div>
+		<div class="left-scale scale">
+			<label class="container"><a>1</a>
+				<input type="radio" name="question15" value="1" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question15" value="2">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question15" value="3">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question15" value="4">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question15" value="5">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<br><br>
+
+	<!-- Question Table Headings -->
+	<div class="instructions">
+		<p>The following questions ask you to say how <b>good</b> or <b>satisfied</b> you have felt about various aspects of your life over the last two weeks.</p>
+	</div>
+
+	<div class="question-table-header">
+		<p>1<br>Very Poor</p>
+		<p>2<br>Poor</p>
+		<p>3<br>Neither</p>
+		<p>4<br>Good</p>
+		<p>5<br>Very Good</p>
+	</div>
+
+	<!-- Question 16 -->
+	<div class="question table-question">
+		<div class="left-question">
+			16. How satisfied are you with your sleep?
+		</div>
+		<div class="left-scale scale">
+			<label class="container"><a>1</a>
+				<input type="radio" name="question16" value="1" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question16" value="2">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question16" value="3">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question16" value="4">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question16" value="5">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<br><br>
+
+	<!-- Question 17 -->
+	<div class="question table-question">
+		<div class="left-question">
+			17. How satisfied are you with your ability to perform your daily living activities?
+		</div>
+		<div class="left-scale scale">
+			<label class="container"><a>1</a>
+				<input type="radio" name="question17" value="1" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question17" value="2">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question17" value="3">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question17" value="4">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question17" value="5">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<br>
+
+	<!-- Question 18 -->
+	<div class="question table-question">
+		<div class="left-question">
+			18. How satisfied are you with your capacity for work?
+		</div>
+		<div class="left-scale scale">
+			<label class="container"><a>1</a>
+				<input type="radio" name="question18" value="1" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question18" value="2">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question18" value="3">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question18" value="4">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question18" value="5">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<br>
+
+	<!-- Question 19 -->
+	<div class="question table-question">
+		<div class="left-question">
+			19. How satisfied are you with yourself?
+		</div>
+		<div class="left-scale scale">
+			<label class="container"><a>1</a>
+				<input type="radio" name="question19" value="1" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question19" value="2">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question19" value="3">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question19" value="4">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question19" value="5">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<br><br>
+
+	<!-- Question 20 -->
+	<div class="question table-question">
+		<div class="left-question">
+			20. How satisfied are you with your personal relationships?
+		</div>
+		<div class="left-scale scale">
+			<label class="container"><a>1</a>
+				<input type="radio" name="question20" value="1" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question20" value="2">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question20" value="3">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question20" value="4">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question20" value="5">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<br>
+
+	<!-- Question 21 -->
+	<div class="question table-question">
+		<div class="left-question">
+			21. How satisfied are you with your sex life?
+		</div>
+		<div class="left-scale scale">
+			<label class="container"><a>1</a>
+				<input type="radio" name="question21" value="1" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question21" value="2">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question21" value="3">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question21" value="4">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question21" value="5">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<br><br>
+
+	<!-- Question 22 -->
+	<div class="question table-question">
+		<div class="left-question">
+			22. How satisfied are you with the support you get from your friends?
+		</div>
+		<div class="left-scale scale">
+			<label class="container"><a>1</a>
+				<input type="radio" name="question22" value="1" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question22" value="2">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question22" value="3">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question22" value="4">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question22" value="5">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<br>
+
+	<!-- Question 23 -->
+	<div class="question table-question">
+		<div class="left-question">
+			23. How satisfied are you with the conditions of your living place?
+		</div>
+		<div class="left-scale scale">
+			<label class="container"><a>1</a>
+				<input type="radio" name="question23" value="1" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question23" value="2">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question23" value="3">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question23" value="4">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question23" value="5">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<br>
+
+	<!-- Question 24 -->
+	<div class="question table-question">
+		<div class="left-question">
+			24. How satisfied are you with your access to health services?
+		</div>
+		<div class="left-scale scale">
+			<label class="container"><a>1</a>
+				<input type="radio" name="question24" value="1" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question24" value="2">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question24" value="3">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question24" value="4">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question24" value="5">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<br>
+
+	<!-- Question 25 -->
+	<div class="question table-question">
+		<div class="left-question">
+			25. How satisfied are you with your mode of transportation?
+		</div>
+		<div class="left-scale scale">
+			<label class="container"><a>1</a>
+				<input type="radio" name="question25" value="1" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question25" value="2">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question25" value="3">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question25" value="4">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question25" value="5">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<br>
+
+	<!-- Question Table Headings -->
+	<div class="instructions">
+		<p>The following question refers to <b>how often</b> you have felt or experienced certain things in the last two weeks.</p>
+	</div>
+
+	<div class="question-table-header">
+		<p>1<br>Very Poor</p>
+		<p>2<br>Poor</p>
+		<p>3<br>Neither</p>
+		<p>4<br>Good</p>
+		<p>5<br>Very Good</p>
+	</div>
+
+	<!-- Question 26 -->
+	<div class="question table-question">
+		<div class="left-question">
+			26. How often do you have negative feelings, such as blue moode, despair, anxiety, depression?
+		</div>
+		<div class="left-scale scale">
+			<label class="container"><a>1</a>
+				<input type="radio" name="question26" value="1" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>2</a>
+				<input type="radio" name="question26" value="2">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>3</a>
+				<input type="radio" name="question26" value="3">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>4</a>
+				<input type="radio" name="question26" value="4">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container"><a>5</a>
+				<input type="radio" name="question26" value="5">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+	</div>
+	<br><br>
+
+	<script type="text/javascript">
+	
+		// csv header row and names of questions
+		var header = "Info Question 1, Info Question 2a, Info Question 2b, Info Question 2c, Info Question 3, Info Question 4, Info Question 5, Question 1, Question 2, Question 3, Question 4, Question 5, Question 6, Question 7, Question 8, Question 9, Question 11, Question 12, Question 13, Question 14, Question 15, Question 16, Question 17, Question 18, Question 19, Question 20, Question 21, Question 22, Question 23, Question 24, Question 25, Question 26\r\n";
+		var questions = ["infoquestion1", "infoquestion2a", "infoquestion2b", "infoquestion2c", "infoquestion3", "infoquestion4", "infoquestion5", "question1", "question2", "question3", "question4", "question5", "question6", "question7", "question8", "question9", "question11", "question12", "question13", "question14", "question15", "question16", "question17", "question18", "question19", "question20", "question21", "question22", "question23", "question24", "question25", "question26"];
+
+		// function which generates the csv
+		function grabvals() {
+
+			// iterate through questions
+			var csv = [];
+			for (var i = 0; i < 33; i++) {
+
+				// iterate through the radios
+				var radios = document.getElementsByName(questions[i]);
+				for (var j = 0; j < radios.length; j++) {
+					if (radios[j].checked) {
+						csv.push(radios[j].value);
+						break;
+					}
+				}
+				
+			}
+			alert(header+csv.join()+"\r\n");
+		} 
+
+	</script>
+
+	<input type="button" name="submit" value="Submit" onclick="grabvals();">
+
+</div>
+</body>
+</html>
