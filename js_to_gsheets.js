@@ -26,6 +26,7 @@ function makeApiCall() {
     var request = gapi.client.sheets.spreadsheets.values.append(params, body);
     request.then(function(response) {
         console.log(response.result); // maybe do something with response?
+        window.location = 'https://dcelemeno.github.io/lipedemaProject/';
     }, function(reason) {
         console.error('error: ' + reason.result.error.message);
     });
