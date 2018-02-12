@@ -7,7 +7,10 @@
 	
 		/* overall */
 		* { font-family: 'Roboto', sans-serif; }
-		.main { margin:35px; }
+		.main { 
+			margin: 50px auto;
+			width:740px;
+		}	
 		.left { float:left; }
 		.right { float:right; }
 		.scale, .question p, 
@@ -142,6 +145,21 @@
     		vertical-align: top !important;
     		width:62%;
 		}
+		/* submit button */
+		.submit-btn {
+			float:right;
+			color: #FFFFFF !important;
+    		background-color: #29BA48 !important;
+		    border: 1px solid #29BA48 !important;
+		    border-radius: 2px !important;
+		    padding: 6px 12px 6px 12px;
+    		font-size: 14px;
+    		transition: all 0.5s ease !important;
+		}
+		.submit-btn:hover {
+			background-color: #2E8B57 !important;
+			cursor: pointer;
+		}
 
 	</style>
 </head>
@@ -162,11 +180,11 @@
 	<div class="fields">
 		<div class="field-row">	
 			<label class="field-label">Name<em class="asterisk">*</em> </label>
-			<input type="text" class="field-value" placeholder="Enter your name here">
+			<input type="text" id="name" class="field-value" placeholder="Enter your name here">
 		</div>	
 		<div class="field-row">	
 			<label class="field-label">E-mail<em class="asterisk">*</em> </label>
-			<input type="text" class="field-value" placeholder="Enter your email here">
+			<input type="text" id ="email" class="field-value" placeholder="Enter your email here">
 		</div>
 	</div>
 
@@ -1249,37 +1267,49 @@
 				<span class="checkmark"></span>
 			</label>
 		</div>
-	</div>
 
-	<script type="text/javascript">
-	
-		// csv header row and names of questions
-		var header = "Question 1, Question 2, Question 3, Question 4, Question 5, Question 6, Question 7, Question 8, Question 9, Question 10, Question 11, Question 12, Question 13, Question 14, Question 15, Question 16, Question 17, Question 18, Question 19a, Question 19b, Question 20\r\n";
-		var questions = ["question1", "question2", "question3", "question4", "question5", "question6", "question7", "question8", "question9", "question10", "question11", "question12", "question13", "question14", "question15", "question16", "question17", "question18", "question19a", "question19b", "question20"];
+		<!-- send the info over to google sheets-->
+		<script type="text/javascript" src="../js_to_gsheets.js"></script>
+		<script async defer src="https://apis.google.com/js/api.js"
+	        onload="this.onload=function(){};handleClientLoad()"
+	        onreadystatechange="if (this.readyState === 'complete') this.onload()">
+	    </script>
 
-		// function which generates the csv
-		function grabvals() {
+	    <!-- js for generating the info to send to sheets-->
+		<script type="text/javascript">
+			/*var header = ["Name", "Email", "Question 1", "Question 2", "Question 3", "Question 4", "Question 5", "Question 6", "Question 7", "Question 8", "Question 9", "Question 10", "Question 11", "Question 12", "Question 13", "Question 14", "Question 15", "Question 16", "Question 17", "Question 18", "Question 19a", "Question 19b", "Question 20"];*/
+			var questions = ["question1", "question2", "question3", "question4", "question5", "question6", "question7", "question8", "question9", "question10", "question11", "question12", "question13", "question14", "question15", "question16", "question17", "question18", "question19a", "question19b", "question20"];
+			function sendData() {
+				// iterate through questions
+				var csv = [];
 
-			// iterate through questions
-			var csv = [];
-			for (var i = 0; i < 21; i++) {
+				//grab name and email
+				csv.push(document.getElementById('name').value);
+				csv.push(document.getElementById('email').value);
 
-				// iterate through the radios
-				var radios = document.getElementsByName(questions[i]);
-				for (var j = 0; j < radios.length; j++) {
-					if (radios[j].checked) {
-						csv.push(radios[j].value);
-						break;
-					}
+				for (var i = 0; i < 21; i++) {
+
+					// iterate through the radios
+					var radios = document.getElementsByName(questions[i]);
+					for (var j = 0; j < radios.length; j++) {
+						if (radios[j].checked) {
+							csv.push(radios[j].value);
+							break;
+						}
+					}					
 				}
-				
+
+				setConfigVals(csv, 'PainQualityScale!A:W');
+				handleSignInClick();
 			}
-			alert(header+csv.join()+"\r\n");
-		} 
+		</script>
 
-	</script>
-
-	<input type="button" name="submit" value="Submit" onclick="grabvals();">
+		<!-- submit button -->
+		<button class="submit-btn" value="Submit" onclick="sendData();">
+		    <i class="hugeicons-paper-plane"></i><!-- substitute with little whit jumping lady -->
+		    <span>Submit</span>
+		</button>	
+	</div>
 </div>
 </body>
 </html>

@@ -178,6 +178,22 @@
 		.date-slash {
 			margin:10px;
 		}
+
+		/* submit button */
+		.submit-btn {
+			float:right;
+			color: #FFFFFF !important;
+    		background-color: #29BA48 !important;
+		    border: 1px solid #29BA48 !important;
+		    border-radius: 2px !important;
+		    padding: 6px 12px 6px 12px;
+    		font-size: 14px;
+    		transition: all 0.5s ease !important;
+		}
+		.submit-btn:hover {
+			background-color: #2E8B57 !important;
+			cursor: pointer;
+		}
 	</style>
 </head>
 <body>
@@ -220,11 +236,11 @@
 	<div class="fields">
 		<div class="field-row">	
 			<label class="field-label">2. What is your date of birth?</label>
-			<input type="text" name="infoquestion2a" class="field-value small-field" placeholder="Day">
+			<input type="text" name="infoquestion2a" class="field-value small-field" id="infoquestion2a" placeholder="Day">
 			<b class="date-slash">/</b>
-			<input type="text" name="infoquestion2b" class="field-value small-field" placeholder="Month">
+			<input type="text" name="infoquestion2b" class="field-value small-field" id="infoquestion2b" placeholder="Month">
 			<b class="date-slash">/</b>
-			<input type="text" name="infoquestion2c" class="field-value small-field" placeholder="Year">
+			<input type="text" name="infoquestion2c" class="field-value small-field" id="infoquestion2c" placeholder="Year">
 		</div>	
 	</div>
 
@@ -313,7 +329,7 @@
 	<div class="fields">
 		<div class="field-row">	
 			<label class="field-label">6. If something is wrong with your health, what do you think it is?</label>
-			<input type="text" name="infoquestion6" class="field-value" placeholder="illness/problem">
+			<input type="text" name="infoquestion6" class="field-value" id="infoquestion6" placeholder="illness/problem">
 		</div>	
 	</div>
 
@@ -1167,15 +1183,19 @@
 	</div>
 	<br><br>
 
+	<!-- send the info over to google sheets-->
+	<script type="text/javascript" src="../js_to_gsheets.js"></script>
+	<script async defer src="https://apis.google.com/js/api.js"
+        onload="this.onload=function(){};handleClientLoad()"
+        onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
+
+    <!-- js for generating the info to send to sheets-->
 	<script type="text/javascript">
-	
-		// csv header row and names of questions
-		var header = "Info Question 1, Info Question 2a, Info Question 2b, Info Question 2c, Info Question 3, Info Question 4, Info Question 5, Question 1, Question 2, Question 3, Question 4, Question 5, Question 6, Question 7, Question 8, Question 9, Question 11, Question 12, Question 13, Question 14, Question 15, Question 16, Question 17, Question 18, Question 19, Question 20, Question 21, Question 22, Question 23, Question 24, Question 25, Question 26\r\n";
-		var questions = ["infoquestion1", "infoquestion2a", "infoquestion2b", "infoquestion2c", "infoquestion3", "infoquestion4", "infoquestion5", "question1", "question2", "question3", "question4", "question5", "question6", "question7", "question8", "question9", "question11", "question12", "question13", "question14", "question15", "question16", "question17", "question18", "question19", "question20", "question21", "question22", "question23", "question24", "question25", "question26"];
-
-		// function which generates the csv
-		function grabvals() {
-
+		/*var header = ["Gender", "Birth Day", "Birth Month", "Birth Year", "Education", "Marital Status", "Currently Ill", "What is wrong", "Question 1", "Question 2", "Question 3", "Question 4", "Question 5", "Question 6", "Question 7", "Question 8", "Question 9", "Question 11", "Question 12", "Question 13", "Question 14", "Question 15", "Question 16", "Question 17", "Question 18", "Question 19", "Question 20", "Question 21", "Question 22", "Question 23", "Question 24", "Question 25", "Question 26"];*/
+		var questions = ["infoquestion1", "infoquestion2a", "infoquestion2b", "infoquestion2c", "infoquestion3", "infoquestion4", "infoquestion5", "infoquestion6", "question1", "question2", "question3", "question4", "question5", "question6", "question7", "question8", "question9", "question11", "question12", "question13", "question14", "question15", "question16", "question17", "question18", "question19", "question20", "question21", "question22", "question23", "question24", "question25", "question26"];
+		function sendData() {
+			
 			// iterate through questions
 			var csv = [];
 			for (var i = 0; i < 33; i++) {
@@ -1190,12 +1210,23 @@
 				}
 				
 			}
-			alert(header+csv.join()+"\r\n");
-		} 
 
+			// add in missed text boxes
+			csv.splice(1, 0, document.getElementById('infoquestion2a').value);
+			csv.splice(2, 0, document.getElementById('infoquestion2b').value);
+			csv.splice(3, 0, document.getElementById('infoquestion2c').value);
+			csv.splice(7, 0, document.getElementById('infoquestion6').value);
+
+			setConfigVals(csv, 'WHOQol-BREF!1:1');
+			handleSignInClick();
+		}
 	</script>
 
-	<input type="button" name="submit" value="Submit" onclick="grabvals();">
+	<!-- submit button -->
+	<button class="submit-btn" value="Submit" onclick="sendData();">
+	    <i class="hugeicons-paper-plane"></i><!-- substitute with little whit jumping lady -->
+	    <span>Submit</span>
+	</button>	
 
 </div>
 </body>

@@ -3,16 +3,21 @@
 <head>
 	<title>Body Measurements w/ Pictures</title>
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+	<!-- TODO make it so that this is only one style sheet with the other pages -->
 	<style type="text/css">
 
 		/* overall */
-		* {font-family: 'Roboto', sans-serif;}
-		
+		* {font-family: 'Roboto', sans-serif;} /* find out what font she wants */
+		.main { 
+			margin: 50px auto;
+			width:740px;
+		}		
+
 		.heading {
 			width:740px;
 			margin-left:2%;
 		}
-
 		.fields { margin:35px; }
 		.asterisk { color:#24A33F; }
 		.field-row {
@@ -46,6 +51,21 @@
     		width:350px;
 		}
 
+		/* submit button */
+		.submit-btn {
+			float:right;
+			color: #FFFFFF !important;
+    		background-color: #29BA48 !important;
+		    border: 1px solid #29BA48 !important;
+		    border-radius: 2px !important;
+		    padding: 6px 12px 6px 12px;
+    		font-size: 14px;
+    		transition: all 0.5s ease !important;
+		}
+		.submit-btn:hover {
+			background-color: #2E8B57 !important;
+			cursor: pointer;
+		}
 	</style>
 </head>
 <body>
@@ -159,23 +179,31 @@
 			<input type="text" class="field-value" placeholder="Left Ankle">
 		</div>	
 	</div>
-</div>
 
-<script type="text/javascript">
-	
-	//function for generating the csv
-	var header = "Name, E-mail, Weight, Weight Measurement, Neck, Shoulder Width, Bustline, Under Bustline, Waist, Right Biceps, Right Forearm, Right Wrist, Left Biceps, Left Forearm, Left Wrist, Hips, Right Upper Thigh, Right Just Above Knee, Right Mid Calf, Right Ankle, Left Upper Thigh, Left Just Above Knee, Left Mid Calf, Left Ankle\r\n";
-	function grabvals() {
-		var csv = [];
-		for (var i = 0; i < document.getElementsByClassName("field-value").length; i++) {
-			csv.push(document.getElementsByClassName("field-value")[i].value);
+	<!-- send the info over to google sheets-->
+	<script type="text/javascript" src="../js_to_gsheets.js"></script>
+	<script async defer src="https://apis.google.com/js/api.js"
+        onload="this.onload=function(){};handleClientLoad()"
+        onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
+
+    <!-- js for generating the info to send to sheets-->
+	<script type="text/javascript">
+		function sendData() {
+			var csv = [];
+			for (var i = 0; i < document.getElementsByClassName("field-value").length; i++) {
+				csv.push(document.getElementsByClassName("field-value")[i].value);
+			}
+			setConfigVals(csv, 'BodyMeasurements!A:X');
+			handleSignInClick();
 		}
-		alert(header+csv.join()+"\r\n");
-	} 
+	</script>
 
-</script>
-
-<input type="button" name="submit" value="Submit" onclick="grabvals();">
-
+	<!-- submit button -->
+	<button class="submit-btn" value="Submit" onclick="sendData();">
+	    <i class="hugeicons-paper-plane"></i><!-- substitute with little whit jumping lady -->
+	    <span>Submit</span>
+	</button>	
+</div>
 </body>
 </html>

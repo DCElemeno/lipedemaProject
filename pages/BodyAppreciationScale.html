@@ -7,7 +7,7 @@
 
 		/* overall */
 		* {font-family: 'Roboto', sans-serif;}
-		.main { margin:35px; }
+		.main { margin:35px; width:7405x; }
 
 		.left { float:left; }
 		.right { float:right; }
@@ -180,6 +180,22 @@
     		width:350px;
 		}
 
+		/* submit button */
+		.submit-btn {
+			float:right;
+			color: #FFFFFF !important;
+    		background-color: #29BA48 !important;
+		    border: 1px solid #29BA48 !important;
+		    border-radius: 2px !important;
+		    padding: 6px 12px 6px 12px;
+    		font-size: 14px;
+    		transition: all 0.5s ease !important;
+		}
+		.submit-btn:hover {
+			background-color: #2E8B57 !important;
+			cursor: pointer;
+		}
+
 	</style>
 </head>
 <body>
@@ -188,13 +204,10 @@
 	<!-- instructions -->
 	<h1>Body Appreciation Scale 2</h1>
 	<div class="instructions">
-		<p><b>Answer YES or NO for each questionnaire item.</b></p>
+		<p>Answer how TRUE or FALSE is <b>each</b> of the following statements for you.</p>
 	</div>
 
 	<!-- Question Table Headings -->
-	<div class="question">
-		<p>How TRUE or FALSE is <b>each</b> of the following statements for you.</p>
-	</div>
 	<div class="question-table-header">
 		<p>1<br>never</p>
 		<p>2<br>seldom</p>
@@ -503,15 +516,19 @@
 	</div>
 	<br><br>
 
+	<!-- send the info over to google sheets-->
+	<script type="text/javascript" src="../js_to_gsheets.js"></script>
+	<script async defer src="https://apis.google.com/js/api.js"
+        onload="this.onload=function(){};handleClientLoad()"
+        onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
+
+    <!-- js for generating the info to send to sheets-->
 	<script type="text/javascript">
-	
-		// csv header row and names of questions
-		var header = "Question 1, Question 2, Question 3, Question 4, Question 5, Question 6, Question 7, Question 8, Question 9, Question 10\r\n";
+		var header = ["Question 1", "Question 2", "Question 3", "Question 4", "Question 5", "Question 6", "Question 7", "Question 8", "Question 9", "Question 10"];
 		var questions = ["question1", "question2", "question3", "question4", "question5", "question6", "question7", "question8", "question9", "question10"];
 
-		// function which generates the csv
-		function grabvals() {
-
+		function sendData() {
 			// iterate through questions
 			var csv = [];
 			for (var i = 0; i < 10; i++) {
@@ -526,12 +543,16 @@
 				}
 				
 			}
-			alert(header+csv.join()+"\r\n");
-		} 
-
+			setConfigVals(csv, 'BodyAppreciationScale!A:J');
+			handleSignInClick();
+		}
 	</script>
 
-	<input type="button" name="submit" value="Submit" onclick="grabvals();">
+	<!-- submit button -->
+	<button class="submit-btn" value="Submit" onclick="sendData();">
+	    <i class="hugeicons-paper-plane"></i><!-- substitute with little whit jumping lady -->
+	    <span>Submit</span>
+	</button>
 
 	<!-- Divider -->
 	<hr class="question-divider"><br>
