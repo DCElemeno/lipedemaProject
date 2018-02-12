@@ -20,6 +20,9 @@ files created for lipedema project
 2. Pain Quality Scale <--- need to grab name and email
 3. Body Appreciation Scale
 4. 36 Question Survey
+5. WHOQol <-- last 2 questions, fix 2 and 6
 
 # IDEA to tell catherine
 she needs a csv... why not google sheets?
+
+TODO: make submit not require user sign in

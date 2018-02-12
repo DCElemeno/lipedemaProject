@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "project-id-5660378779375240418",
+  "private_key_id": "482e3523384b558d9113c30bab8306739d27adce",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCu3Zctuzrszfzq\n00TsCIKUYOtIVuy4wB1AESWlp3Yc9/5SxbzNg551+BeDXCXpGiX5x7uDNvfXl0ta\nNQfR4fhWsSI56jolu84JVlQXhWIfCCUKajCOsjYGMZd8bzU0lnw3tHjymZVertJE\nOlxejMj4Kk6hc8plSwyewNbQNlaQIZVwfrQM51+OMSErwG77W9BxWCZAV8UkK5Vi\n5LXvO5nSXX7S1pGf7ymsQRbsRoSPKiEiBznL/ySfY5wN1CIqInvHfAgIVs+dtnr7\nDd+rhTJPOUCHeuz3aKyExxnObNH383agfFSoQ0zInr9EeOZrgHtCAAryesL2bLUd\nvMriNKzdAgMBAAECggEAGmJr+6X6+50PEt2C0jxse3fuOFGJUU0HfNG5hPeyDifr\nE1ErrjS0Vadz4MmoHLZp0XjuFZvXJIv6/ibvQZ9fabE7cVKiqGvgaC9C6/OfvP/t\nGtev8O/5z9Buw4NCG2ezYXJVJ4G99HXbWxkVM9z5O9yiVaETglojEtcU8oCoagGu\n9CB0sVWAsFNQ5Mw/HLfxt53Hse2M6aUAM8gSG0PATW0+N7HkQp2ws/UjZ6gD/614\nCCE1u9kHN4z/lx94mUavzdI/wiYK/9xZozXppDreXo2AQB1NSBcekSiTCClnQqfA\nGCqxojrxnXBq2K83CtTgn+7cZPblAqQ0IfA0bYGubwKBgQDtkGnGDdIjsrL5SFNo\nPP96elu2ukFcw34dEwtEEZ3wzboMMDC0OsW6url/d5cONlri3tIg4IqrTevlnjrb\naMMmAQpv+E6Wmc+MOnXk6M4btmdpg4vahauHELsWrgmNIxZmbmIEgTeXA4dFxXpI\nGGWWYcMql6ubMyapxMAsK92qBwKBgQC8b5Jt+4FYIduo9A5DY4DDRzBwGdPnZTKK\nqN+Yo2IMwzQmEjz3E5aFGa/kEM8bbxMa23PNnv+9gcUxmRwPZiV1ecKY+Kw5OY9q\ngvBDgQkP6CII/Y0MHgfKzAafWHOKurc4dGi8KXbeAP9JhZGYbwp+pYJ+1i/jkjWF\nMFvXiEtI+wKBgBqoS9Y3ks8CrGagoQtfXOOne0cj21XHcg1dJ7R5rZlp3Gilt7Fh\nrvJnJY2SI9cqbkRq8HVT/PuAAOqBOOWJ+ev3ze4GlPr9Q3be0H/hR8+ARlZmtnjM\n6xR64iOHX/cAavEPjdwni89cS/+eSzxv0GZxje7nmhAOS1Zdh5rtSTBdAoGAU/Op\nW1KoB6neAWHqUN+t6FJ5JBh9riQJ5njiVVDFSEZXn3aUrseNUfNlx8gtXV2ZN2f6\nKeviqH1+a2B5ferWWYZLyndP05bvbFa10H1Wmj2jnDnKc1GVyyYm9SslHvOc2YwT\ndXFLwhDTq9/URAOEu3PltbibUVo8egBXiqjwUa0CgYEAtrguRFu/8r8knv++6rTq\ngaCweFlI450zcAYZLuU7hXgUQimmEUFr0M/UOKhR3ZfaPmNBgqIz+jL2N3tQtVWT\nScMffv8bqvlF5Nbu0s1LqwyDPoR/gJpqnVEIxmBYVYH5LDnZM491rEe2yC8xS3Wo\ns8pVoHqL4X43nZyg1qZIniU=\n-----END PRIVATE KEY-----\n",
+  "client_email": "lipedema-sheets-api-service@project-id-5660378779375240418.iam.gserviceaccount.com",
+  "client_id": "105910922839727905400",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/lipedema-sheets-api-service%40project-id-5660378779375240418.iam.gserviceaccount.com"
+}
